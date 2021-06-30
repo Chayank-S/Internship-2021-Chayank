@@ -1,3 +1,35 @@
+# Root Cause Analys (RCA)
+## **What is** **Root Cause Analysis (RCA)?**
+
+Root cause analysis usually referred to as RCA is an approach used to analyze serious problems before trying to solve them, by which the main root cause of a problem is isolated and identified. A root cause is defined as a factor which by removal would prevent the occurrence of the adverse event, other factors that affect the outcome should not be considered as root causes.
+
+**Root cause analysis (****RCA****)**  is essential to effective problem solving, as preventing the event from occurring is more appreciable than reacting to the resultant harmful effects. Short term solutions are not profitable for large organizations; RCA helps to eliminate the source of defect permanently.
+
+Root cause analysis could be done using multiple tools and methods, in general, root cause analysis is about looking deep within the process to find what, when and why an event trigger.
+
+Unfortunately, root cause analysis is a reactive approach, that means an error or adverse event must happen prior to applying RCA.
+
+Root cause analysis is a team approach methodology, not a single person decision. RCA should start by clearly identifying the problem, usually an adverse event that should not be allowed to happen again.
+
+RCA should be applied shortly after adverse events to keep track of all essential details. Process owners are the main skeleton for a proper RCA, although they might not feel much comfortable with such meetings and conversations, hence the managers would play a major role explaining the importance of RCA and to sustain the non-blame culture of the organization.
+
+## **Root Cause Analysis (RCA) Tools**
+
+Root cause analysis (RCA) could be applied using a wide variety of tools, there is no perfect method that can be used anywhere, instead, the quality managers would select the suitable approach for organization and team members, typically using brainstorming technique.
+
+-   Fishbone diagram, also known as Ishikawa or cause and effect diagram is one of the classic tools for RCA. It is used to identify various possible causes that led to the current effect under investigation.
+-   Five whys is another popular tool for RCA, also known as Gemba Gembustu. It is a technique that explores the hidden causes of the specific problem by repeated asked whys, the number 5 is not fixed, but usually the root cause is identified around it.
+-   A flowchart is mapping the process steps through different sections or departments that could be helpful to identify defects source location.
+-   Pareto chart is usually performed during brainstorming sessions to prioritize the given possible cause of the adverse event. Pareto principle is twenty percent of causes results in eighty percent of effects.
+-   Scatter diagram is another displaying tool that facilitates localizing relations by representing numerical variables on graphs.
+
+**Read About  [Root Cause Analysis Tools](https://www.6sigma.us/etc/what-are-common-root-cause-analysis-rca-tools/)**
+
+## **Ensure you are performing Root Cause Analysis (RCA) properly**
+
+First, carefully select the team members sharing in brainstorming; process owners are ideal to your team. Second, do not represent solutions, even though you may think it is obvious, actually it is not. Then carefully read the graphs and charts, be aware of relationships. Make reasonable improvement suggestions and do not take responsibilities of corrective actions you canno 
+
+
 # Consistant Hashing
 
 - One of the ways hashing can be implemented in a distributed system is by taking hash Modulo of a number of nodes.  
@@ -983,5 +1015,5 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTA5MzEzMDRdfQ==
+eyJoaXN0b3J5IjpbLTQ3NjA3NTEwMSwtMTU5MDkzMTMwNF19
 -->
