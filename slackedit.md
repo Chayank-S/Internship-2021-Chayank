@@ -22,7 +22,7 @@ Root cause analysis (RCA) could be applied using a wide variety of tools, there 
 -   Fishbone diagram, also known as Ishikawa or cause and effect diagram is one of the classic tools for RCA. 
 -   Five whys is another popular tool for RCA, also known as Gemba Gembustu. 
 -   A flowchart is mapping the process steps through different sections or departments that could be helpful to identify defects source location.
--   Pareto chart is usually performed during brainstorming sessions to prioritize the given possible cause of the adverse event. Pareto principle is twenty percent of causes results in eighty percent of effects.
+-   Pareto chart is usually performed during brainstorming sessions to prioritize the given possible cause of the adverse event. 
 -   Scatter diagram is another displaying tool that facilitates localizing relations by representing numerical variables on graphs.
 
 
@@ -1014,6 +1014,6 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY5ODk1MDA4LDE4MjgwMTAwMjAsLTEzND
+eyJoaXN0b3J5IjpbMjM4MDkzMjk1LDE4MjgwMTAwMjAsLTEzND
 YxMjU4OSwtMTU5MDkzMTMwNF19
 -->
