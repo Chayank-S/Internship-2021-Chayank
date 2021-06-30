@@ -3,10 +3,9 @@
 
 - Approach used to analyze serious problems before trying to solve them 
 - RCA helps isolates and identifies the main root cause of a problem . 
-	- A root cause is defined as a factor which by removal would prevent the occurrence of the adverse event, other factors that affect the outcome should not be considered as root causes.
 
 **Root cause analysis (****RCA****)**  
-is essential to effective problem solving, as preventing the event from occurring is more appreciable than reacting to the resultant harmful effects. Short term solutions are not profitable for large organizations; RCA helps to eliminate the source of defect permanently.
+- Is effective problem solving method, as preventing the event from occurring is more appreciable than reacting to the resultant harmful effects.
 
 Root cause analysis could be done using multiple tools and methods, in general, root cause analysis is about looking deep within the process to find what, when and why an event trigger.
 
@@ -1018,6 +1017,6 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyODAxMDAyMCwtMTM0NjEyNTg5LC0xNT
-kwOTMxMzA0XX0=
+eyJoaXN0b3J5IjpbLTE2MTY5MDI2MjAsMTgyODAxMDAyMCwtMT
+M0NjEyNTg5LC0xNTkwOTMxMzA0XX0=
 -->
