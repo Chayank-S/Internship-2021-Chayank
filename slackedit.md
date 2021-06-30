@@ -25,11 +25,8 @@ Root cause analysis (RCA) could be applied using a wide variety of tools, there 
 -   Pareto chart is usually performed during brainstorming sessions to prioritize the given possible cause of the adverse event. Pareto principle is twenty percent of causes results in eighty percent of effects.
 -   Scatter diagram is another displaying tool that facilitates localizing relations by representing numerical variables on graphs.
 
-**Read About  [Root Cause Analysis Tools](https://www.6sigma.us/etc/what-are-common-root-cause-analysis-rca-tools/)**
 
-## **Ensure you are performing Root Cause Analysis (RCA) properly**
-
-First, carefully select the team members sharing in brainstorming; process owners are ideal to your team. Second, do not represent solutions, even though you may think it is obvious, actually it is not. Then carefully read the graphs and charts, be aware of relationships. Make reasonable improvement suggestions and do not take responsibilities of corrective actions you canno 
+ 
 
 
 # Consistant Hashing
@@ -1017,6 +1014,6 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzg2NzQ1Mjk3LDE4MjgwMTAwMjAsLTEzND
+eyJoaXN0b3J5IjpbOTY5ODk1MDA4LDE4MjgwMTAwMjAsLTEzND
 YxMjU4OSwtMTU5MDkzMTMwNF19
 -->
