@@ -1,4 +1,4 @@
-# Root Cause Analys (RCA)
+# Root Cause Analysi (RCA)
 ## **What is** **Root Cause Analysis (RCA)?**
 
 - Approach used to analyze serious problems before trying to solve them 
@@ -1018,5 +1018,6 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDYxMjU4OSwtMTU5MDkzMTMwNF19
+eyJoaXN0b3J5IjpbMTgyODAxMDAyMCwtMTM0NjEyNTg5LC0xNT
+kwOTMxMzA0XX0=
 -->
