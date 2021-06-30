@@ -7,11 +7,11 @@
 **Root cause analysis (****RCA****)**  
 - Is effective problem solving method, as preventing the event from occurring is more appreciable than reacting to the resultant harmful effects.
 
-- Root cause analysis could be done using multiple tools and methods.
+- RCA could be done using multiple tools and methods.
 
- - Root cause analysis is a reactive approach, that means an error or adverse event must happen prior to applying RCA.
+ - Root cause analysis is a reactive approach.
 
-Root cause analysis is a team approach methodology, not a single person decision. RCA should start by clearly identifying the problem, usually an adverse event that should not be allowed to happen again.
+- Root cause analysis is a team approach methodology.
 
 RCA should be applied shortly after adverse events to keep track of all essential details. Process owners are the main skeleton for a proper RCA, although they might not feel much comfortable with such meetings and conversations, hence the managers would play a major role explaining the importance of RCA and to sustain the non-blame culture of the organization.
 
@@ -1017,6 +1017,6 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NTQxODMyNSwxODI4MDEwMDIwLC0xMz
-Q2MTI1ODksLTE1OTA5MzEzMDRdfQ==
+eyJoaXN0b3J5IjpbLTEyMjc4MDc4OTAsMTgyODAxMDAyMCwtMT
+M0NjEyNTg5LC0xNTkwOTMxMzA0XX0=
 -->
