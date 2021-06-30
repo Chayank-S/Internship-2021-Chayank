@@ -13,14 +13,14 @@
 
 - Root cause analysis is a team approach methodology.
 
-RCA should be applied shortly after adverse events to keep track of all essential details. Process owners are the main skeleton for a proper RCA, although they might not feel much comfortable with such meetings and conversations, hence the managers would play a major role explaining the importance of RCA and to sustain the non-blame culture of the organization.
+- RCA should be applied shortly after adverse events to keep track of all essential details. 
 
 ## **Root Cause Analysis (RCA) Tools**
 
 Root cause analysis (RCA) could be applied using a wide variety of tools, there is no perfect method that can be used anywhere, instead, the quality managers would select the suitable approach for organization and team members, typically using brainstorming technique.
 
--   Fishbone diagram, also known as Ishikawa or cause and effect diagram is one of the classic tools for RCA. It is used to identify various possible causes that led to the current effect under investigation.
--   Five whys is another popular tool for RCA, also known as Gemba Gembustu. It is a technique that explores the hidden causes of the specific problem by repeated asked whys, the number 5 is not fixed, but usually the root cause is identified around it.
+-   Fishbone diagram, also known as Ishikawa or cause and effect diagram is one of the classic tools for RCA. 
+-   Five whys is another popular tool for RCA, also known as Gemba Gembustu. 
 -   A flowchart is mapping the process steps through different sections or departments that could be helpful to identify defects source location.
 -   Pareto chart is usually performed during brainstorming sessions to prioritize the given possible cause of the adverse event. Pareto principle is twenty percent of causes results in eighty percent of effects.
 -   Scatter diagram is another displaying tool that facilitates localizing relations by representing numerical variables on graphs.
@@ -1017,6 +1017,6 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjc4MDc4OTAsMTgyODAxMDAyMCwtMT
-M0NjEyNTg5LC0xNTkwOTMxMzA0XX0=
+eyJoaXN0b3J5IjpbMzg2NzQ1Mjk3LDE4MjgwMTAwMjAsLTEzND
+YxMjU4OSwtMTU5MDkzMTMwNF19
 -->
