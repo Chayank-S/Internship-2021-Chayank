@@ -5,7 +5,7 @@
 - RCA helps isolates and identifies the main root cause of a problem . 
 
 **Root cause analysis (****RCA****)**  
-- Is effective problem solving method, as preventing the event from occurring is more appreciable than reacting to the resultant harmful effects.
+- Is effective problem solving method.
 
 - RCA could be done using multiple tools and methods.
 
@@ -1014,6 +1014,6 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM4MDkzMjk1LDE4MjgwMTAwMjAsLTEzND
-YxMjU4OSwtMTU5MDkzMTMwNF19
+eyJoaXN0b3J5IjpbMTU0NzQ2NTI1OCwyMzgwOTMyOTUsMTgyOD
+AxMDAyMCwtMTM0NjEyNTg5LC0xNTkwOTMxMzA0XX0=
 -->
