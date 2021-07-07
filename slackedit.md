@@ -77,11 +77,10 @@ Below are the main requirements of the Message Queuing Service.
 -   Ability to handle lots of reads and writes requests.
 -   Store lots of messages in a highly available and reliable queue.
 -   High performance and high scalability.
--   Provides load balancing for multiple instances of the Synchronization Service.
 
 There will be two types of messaging queues in the service.
 
--   **Request Queue:**  This will be a global request queue shared among all the clients. Whenever a client receives any update or changes in the files/folder it sends the request through the request queue. This request is received by the synchronization service to update the metadata database.
+-   **Request Queue:**  
 -   **Response Queue:**  There will be individual response queue corresponding to the individual clients. The synchronization service broadcast the update through this response queue and this response queue will deliver the updated messages to each client and then these clients will update their respective files accordingly. The message will never be lost even if the client will be disconnected from the internet (the benefit of using the messaging queue service).
     
     We are creating n number of response queues for n number of clients because the message will be deleted from the queue once it will be received by the client and we need to share the updated message to the various subscribed clients.
@@ -1118,7 +1117,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDEzMTIzNjgzLDE1NDc0NjUyNTgsMjM4MD
+eyJoaXN0b3J5IjpbNDE0MTI0NjQyLDE1NDc0NjUyNTgsMjM4MD
 kzMjk1LDE4MjgwMTAwMjAsLTEzNDYxMjU4OSwtMTU5MDkzMTMw
 NF19
 -->
