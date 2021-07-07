@@ -86,9 +86,10 @@ There will be two types of messaging queues in the service.
 
 #### 3. Synchronization Service
 
-The client communicates with the synchronization services either to receive the latest update from the cloud storage or to send the latest request/updates to the Cloud Storage to cl.
+The client communicates with the synchronization services either to receive the latest update from the cloud storage or to send the latest request/updates to the Cloud Storage to clients.
 
-The synchronization service receives the request from the request queue of the messaging services and updates the metadata database with the latest changes. Also, the synchronization service broadcast the latest update to the other clients (if there are multiple clients) through the response queue so that the other client’s indexer can fetch back the chunks from the cloud storage and recreate the files with the latest update. It also updates the local database with the information stored in the Metadata Database. If a client is not connected with the internet or offline for some time, it polls the system for new updates as soon as it goes online.
+- receives the request from the request queue of the messaging services and updates the metadata database with the latest changes. 
+-  broadcast the latest update to the other clients  through the response queue so that the other client’s indexer can fetch back the chunks from the cloud storage and recreate the files with the latest update. It also updates the local database with the information stored in the Metadata Database. If a client is not connected with the internet or offline for some time, it polls the system for new updates as soon as it goes online.
 
 #### 4. Cloud Storage
 
@@ -1113,7 +1114,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzYyNTcxMjIyLDE1NDc0NjUyNTgsMjM4MD
+eyJoaXN0b3J5IjpbMTI2NjUxNDcyLDE1NDc0NjUyNTgsMjM4MD
 kzMjk1LDE4MjgwMTAwMjAsLTEzNDYxMjU4OSwtMTU5MDkzMTMw
 NF19
 -->
