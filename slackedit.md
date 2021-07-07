@@ -12,7 +12,8 @@
 -   File versioning (History of updates)  
 -   File and folder sync
 ### Non functional features
-- Scalability: a site like Dropbox should be usable simultaneously by hundreds of thousands of users, and be just as smooth and easy to use when it is used by te
+- Scalability
+- 
 ### Traffic  
 -   12+ million unique users  
 -   100 million request per day with lots of reads and write.
@@ -1121,7 +1122,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTQyODU4NDksMTU0NzQ2NTI1OCwyMz
-gwOTMyOTUsMTgyODAxMDAyMCwtMTM0NjEyNTg5LC0xNTkwOTMx
-MzA0XX0=
+eyJoaXN0b3J5IjpbLTI1MTIyNjA4OSwxNTQ3NDY1MjU4LDIzOD
+A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
+MDRdfQ==
 -->
