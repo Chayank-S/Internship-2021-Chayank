@@ -50,8 +50,19 @@ This API would be used to download the chunk of a file.
 Request:
 
 ```
-	GET /api/v1/chunks/<chunk_id>
+GET /api/v1/chunks/<chunk_id>
 ```
+
+#### Upload Chunk
+
+This API would be used to upload the chunk of a file.
+
+Request:
+
+```
+POST /api/v1/chunks/<chunk_id>
+```
+
 
 ### Client Components
 
@@ -1138,7 +1149,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzE3MjIxNjMsLTQwNDIwMTU2MCwxNT
-Q3NDY1MjU4LDIzODA5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1
-ODksLTE1OTA5MzEzMDRdfQ==
+eyJoaXN0b3J5IjpbLTIwMTE4NzQ4NywtNDA0MjAxNTYwLDE1ND
+c0NjUyNTgsMjM4MDkzMjk1LDE4MjgwMTAwMjAsLTEzNDYxMjU4
+OSwtMTU5MDkzMTMwNF19
 -->
