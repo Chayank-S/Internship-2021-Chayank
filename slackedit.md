@@ -13,8 +13,9 @@
 -   User should be able to upload/download, update and delete the files  
 -   File versioning (History of updates)  
 -   File and folder sync
+- System should support offline edit
 ### Non functional features
-- Scalability
+- Reliability
 - Security
 - usability
 ### Traffic  
@@ -1125,7 +1126,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzNzkzMDgxMiwxNTQ3NDY1MjU4LDIzOD
+eyJoaXN0b3J5IjpbLTQwNDIwMTU2MCwxNTQ3NDY1MjU4LDIzOD
 A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
 MDRdfQ==
 -->
