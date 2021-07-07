@@ -1,3 +1,81 @@
+# Dropbox  
+> System Design **Dropbox** is a file hosting service operated by the American company **Dropbox, Inc.** that offers `cloud storage`, `file synchronization`, `personal cloud`, and `client software`.- Dropbox brings files together in one central place by creating a special folder on the user's computer. The contents of these folders are synchronized to Dropbox's servers and to other computers and devices where the user has installed Dropbox  
+- When a file in a user's Dropbox folder is changed, Dropbox only uploads the [pieces of the file]([https://en.wikipedia.org/wiki/Block_(data_storage)](https://en.wikipedia.org/wiki/Block_(data_storage)) "Block (data storage)") that have been changed, whenever possible.  
+- When a file or folder is deleted, users can recover it within 30 days.  
+- Dropbox accounts that are not accessed or emails not replied in a year are automatically deleted.  
+- Dropbox uses `SSL` transfers for synchronization and stores the data via `Advanced Encryption Standard(AES)-256` encryption.## System Design dropbox### Core Features  
+-   User should be able to upload/download, update and delete the files  
+-   File versioning (History of updates)  
+-   File and folder sync### Traffic  
+-   12+ million unique users  
+-   100 million request per day with lots of reads and write.### Problem Statement  
+-   **More bandwidth and cloud space utilization:**  To provide a history of the files you need to keep the multiple versions of the files. This requires more bandwidth and more space in the cloud. Even for the small changes in your file, you will have to back up and transfer the whole file into the cloud again and again which is not a good idea.  
+-   **Latency or Concurrency Utilization:**  You can't do time optimization as well. It will consume more time to upload a single file as a whole even if you make small changes in your file. It's also not possible to make use of concurrency to upload/download the files using multi threads or multi processes.
+### Solution   
+- **Break the files into multiple chunks:** There is no need to upload/download the whole single file after making any changes in the file. You just need to save the chunk which is updated (this will take less memory and time). It will be easier to keep the different versions of the files into various chunks.  
+- **Create one more file named as a metadata file:** Incase of multiple files with chunks, This file contains the indexes of the chunks (chunk names and order information). You need to mention the hash of the chunks in this metadata file and you need to sync this file into the cloud.![System-Design-Dropbox-High-Level-Solution]( https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619214958/System-Design-Dropbox-High-Level-Solution.png](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619214958/System-Design-Dropbox-High-Level-Solution.png))We can download the metadata file from the cloud whenever we want and we can recreate the file using various chunks.### Components for the Dropbox system design  
+![Complete-System-Design-Solution-of-Dropbox-Service]([https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619215231/Complete-System-Design-Solution-of-Dropbox-Service.png](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619215231/Complete-System-Design-Solution-of-Dropbox-Service.png))- Client installed on a computer.  
+- 4 basic components of Client : **`Watcher`,`Chunker`, `Indexer`, and `Internal DB`**  
+- Can consists of multiple clients belongs to the same user.  
+-   The client is responsible for uploading/downloading the files, identifying the file changes in the sync folder, and handling conflicts due to offline or concurrent updates.  
+- The client is actively monitoring the folders for all the updates or changes happening in the files  
+-   To handle file metadata updates (e.g. file name, size, modification date, etc.) this client interacts with the Messaging services and Synchronization Service.  
+-   It also interacts with the remote cloud storage to store the actual files and to provide folder synchronization.
+
+
+
+### Discuss The Client Components
+
+-   **Watcher**  is responsible for monitoring the sync folder for all the activities performed by the user such as create, update or delete files/folders. It gives notification to the indexer and chunker if any action is performed in the files or folders.
+-   **Chunker**  break the files into multiple small pieces called chunks and upload it to the cloud storage with a unique id or hash of these chunks. To recreate the files these chunks can be joined together. For any changes in the files, the chunking algorithm detects the specific chunk which is modified and only saves that specific part/chunks to the cloud storage. It reduces the bandwidth usage, synchronization time and storage space in the cloud.
+-   **Indexer**  is responsible for updating the internal database when it receives the notification from the watcher (for any action performed in folders/files). It receives the URL of the chunks from the chunker along with the hash and updates the file with modified chunks. Indexer communicates with the Synchronization Service using the Message Queuing Service, once the chunks are successfully submitted to the cloud Storage.
+-   **Internal database**  store all the files and chunks information, their versions, and their location in the file system.
+
+### Discuss The Other Components
+
+#### 1. Metadata Database
+
+The metadata database maintains the indexes of the various chunks. The information contains files/chunks names, their different versions along with the information of users and workspace. You can use RDBMS or NoSQL but make sure that you meet the data consistency property because multiple clients will be working on the same file. With RDBMS there is no problem with the consistency but with NoSQL, you will get eventual consistency. If you decide to use NoSQL then you need to do different configurations for different databases (For example, Cassandra replication factor gives the consistency level).
+
+Relational databases are difficult to scale so if you’re using the MySQL database then you need to use a database sharding technique (or master-slave technique) to scale the application. In databases sharding, you need to add multiple MySQL databases but it will be difficult to manage these databases for any update or for any new information that will be added to the databases. To overcome this problem we need to build an edge wrapper around the sharded databases. This edge wrapper provides the ORM and the client can easily use this edge wrapper’s ORM to interact with the database (instead of interacting with the databases directly).
+
+![System-Design-Dropbox-Metadata-Edge-Wrapper]( https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619220100/System-Design-Dropbox-Metadata-Edge-Wrapper.png)
+
+#### 2. Message Queuing Service
+
+The messaging service queue will be responsible for the asynchronous communication between the clients and the synchronization service.
+
+![System-Design-Dropbox-Message-Queue-Service]( https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619220312/System-Design-Dropbox-Message-Queue-Service.png)
+
+Below are the main requirements of the Message Queuing Service.
+
+-   Ability to handle lots of reads and writes requests.
+-   Store lots of messages in a highly available and reliable queue.
+-   High performance and high scalability.
+-   Provides load balancing and elasticity for multiple instances of the Synchronization Service.
+
+There will be two types of messaging queues in the service.
+
+-   **Request Queue:**  This will be a global request queue shared among all the clients. Whenever a client receives any update or changes in the files/folder it sends the request through the request queue. This request is received by the synchronization service to update the metadata database.
+-   **Response Queue:**  There will be individual response queue corresponding to the individual clients. The synchronization service broadcast the update through this response queue and this response queue will deliver the updated messages to each client and then these clients will update their respective files accordingly. The message will never be lost even if the client will be disconnected from the internet (the benefit of using the messaging queue service).
+    
+    We are creating n number of response queues for n number of clients because the message will be deleted from the queue once it will be received by the client and we need to share the updated message to the various subscribed clients.
+    
+
+#### 3. Synchronization Service
+
+The client communicates with the synchronization services either to receive the latest update from the cloud storage or to send the latest request/updates to the Cloud Storage.
+
+The synchronization service receives the request from the request queue of the messaging services and updates the metadata database with the latest changes. Also, the synchronization service broadcast the latest update to the other clients (if there are multiple clients) through the response queue so that the other client’s indexer can fetch back the chunks from the cloud storage and recreate the files with the latest update. It also updates the local database with the information stored in the Metadata Database. If a client is not connected with the internet or offline for some time, it polls the system for new updates as soon as it goes online.
+
+#### 4. Cloud Storage
+
+You can use any cloud storage services like Amazon S3 to store the chunks of the files uploaded by the user. The client communicates with the cloud storage for any action performed in the files/folders using the API provided by the cloud provider.
+
+A lot of candidates get afraid of this round more than the coding round because they don’t get the idea that what topics and tradeoffs they should cover within this limited timeframe. Firstly, remember that the system design round is extremely open-ended and there’s no such thing as a standard answer. Even for the sa
+
+
+
 # Root Cause Analysi (RCA)
 ## **What is** **Root Cause Analysis (RCA)?**
 
@@ -1014,6 +1092,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0NzQ2NTI1OCwyMzgwOTMyOTUsMTgyOD
-AxMDAyMCwtMTM0NjEyNTg5LC0xNTkwOTMxMzA0XX0=
+eyJoaXN0b3J5IjpbMTcyMTE1MTQwLDE1NDc0NjUyNTgsMjM4MD
+kzMjk1LDE4MjgwMTAwMjAsLTEzNDYxMjU4OSwtMTU5MDkzMTMw
+NF19
 -->
