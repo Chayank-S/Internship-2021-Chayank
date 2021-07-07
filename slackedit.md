@@ -34,9 +34,11 @@ We can download the metadata file from the cloud whenever we want and we can rec
 -   It also interacts with the remote cloud storage to store the actual files and to provide folder synchronization.
 
 
-### Discuss The Client Components
+### Client Components
 
--   **Watcher**  is responsible for monitoring the sync folder for all the activities performed by the user such as create, update or delete files/folders. It gives notification to the indexer and chunker if any action is performed in the files or folders.
+-   **Watcher**  
+	- responsible for monitoring the sync folder 
+	- It gives notification to the indexer and chunker if any action is performed in the files or folders.
 -   **Chunker**  break the files into multiple small pieces called chunks and upload it to the cloud storage with a unique id or hash of these chunks. To recreate the files these chunks can be joined together. For any changes in the files, the chunking algorithm detects the specific chunk which is modified and only saves that specific part/chunks to the cloud storage. It reduces the bandwidth usage, synchronization time and storage space in the cloud.
 -   **Indexer**  is responsible for updating the internal database when it receives the notification from the watcher (for any action performed in folders/files). It receives the URL of the chunks from the chunker along with the hash and updates the file with modified chunks. Indexer communicates with the Synchronization Service using the Message Queuing Service, once the chunks are successfully submitted to the cloud Storage.
 -   **Internal database**  store all the files and chunks information, their versions, and their location in the file system.
@@ -1102,7 +1104,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjIzNTEwMiwxNTQ3NDY1MjU4LDIzOD
-A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
-MDRdfQ==
+eyJoaXN0b3J5IjpbLTIwNzM2NDU5ODMsMTU0NzQ2NTI1OCwyMz
+gwOTMyOTUsMTgyODAxMDAyMCwtMTM0NjEyNTg5LC0xNTkwOTMx
+MzA0XX0=
 -->
