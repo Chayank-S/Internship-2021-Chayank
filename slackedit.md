@@ -40,10 +40,12 @@ We can download the metadata file from the cloud whenever we want and we can rec
 	- responsible for monitoring the sync folder 
 	- It gives notification to the indexer and chunker if any action is performed in the files or folders.
 -   **Chunker**  
-	- Break the files into multiple small  chunks  
-	- upload it to the cloud storage with a unique id or hash of chunks. 
+	-  For new file
+		- Break the files into multiple small  chunks  
+		- upload it to the cloud storage with a unique id or hash of chunks. 
 	-	For any changes in the files, 
-		-	the chunking algorithm detects the specific chunk which is modified and only saves that specific part/chunks to the cloud storage. It reduces the bandwidth usage, synchronization time and storage space in the cloud.
+		-	the chunking algorithm detects the specific chunk which is modified
+		-	only saves that specific part/chunks to the cloud storage. 
 -   **Indexer**  is responsible for updating the internal database when it receives the notification from the watcher (for any action performed in folders/files). It receives the URL of the chunks from the chunker along with the hash and updates the file with modified chunks. Indexer communicates with the Synchronization Service using the Message Queuing Service, once the chunks are successfully submitted to the cloud Storage.
 -   **Internal database**  store all the files and chunks information, their versions, and their location in the file system.
 
@@ -1108,7 +1110,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1Nzc5NTY3MCwxNTQ3NDY1MjU4LDIzOD
+eyJoaXN0b3J5IjpbMjAxOTIzODk0OSwxNTQ3NDY1MjU4LDIzOD
 A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
 MDRdfQ==
 -->
