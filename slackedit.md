@@ -16,7 +16,7 @@
 ### Non functional features
 - Scalability
 - Security
-- Ava
+- usability
 ### Traffic  
 -   12+ million unique users  
 -   100 million request per day with lots of reads and write.
@@ -1125,7 +1125,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxODU5NDQ2OCwxNTQ3NDY1MjU4LDIzOD
+eyJoaXN0b3J5IjpbLTUzNzkzMDgxMiwxNTQ3NDY1MjU4LDIzOD
 A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
 MDRdfQ==
 -->
