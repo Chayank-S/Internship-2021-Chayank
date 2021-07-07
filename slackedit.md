@@ -57,9 +57,10 @@ We can download the metadata file from the cloud whenever we want and we can rec
 
 #### 1. Metadata Database
 
-- The metadata database maintains the indexes of the various chunks. The information contains files/chunks names, their different versions along with the information of users and workspace. You can use RDBMS or NoSQL but make sure that you meet the data consistency property because multiple clients will be working on the same file. With RDBMS there is no problem with the consistency but with NoSQL, you will get eventual consistency. If you decide to use NoSQL then you need to do different configurations for different databases (For example, Cassandra replication factor gives the consistency level).
+- The metadata database maintains the indexes of the various chunks. 
+- The information contains files/chunks names, their different versions along with the information of users and workspace.
 
-- Relational databases are difficult to scale so if we are using the MySQL database then you need to use a database sharding technique to scale the application. 
+- Relational databases ( use for consistency ) are difficult to scale so if we are using the MySQL database then you need to use a database sharding technique to scale the application. 
 - we need to build an edge wrapper around the sharded databases to scale.
 	- This edge wrapper provides the ORM and the client can easily use this edge wrapper’s ORM to interact with the database (instead of interacting with the databases directly).
 
@@ -76,7 +77,7 @@ Below are the main requirements of the Message Queuing Service.
 -   Ability to handle lots of reads and writes requests.
 -   Store lots of messages in a highly available and reliable queue.
 -   High performance and high scalability.
--   Provides load balancing and elasticity for multiple instances of the Synchronization Service.
+-   Provides load balancing for multiple instances of the Synchronization Service.
 
 There will be two types of messaging queues in the service.
 
@@ -1117,7 +1118,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzODIxNDMyMywxNTQ3NDY1MjU4LDIzOD
-A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
-MDRdfQ==
+eyJoaXN0b3J5IjpbNDEzMTIzNjgzLDE1NDc0NjUyNTgsMjM4MD
+kzMjk1LDE4MjgwMTAwMjAsLTEzNDYxMjU4OSwtMTU5MDkzMTMw
+NF19
 -->
