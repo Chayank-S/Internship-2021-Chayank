@@ -6,14 +6,17 @@
 - When a file in a user's Dropbox folder is changed, Dropbox only uploads the [pieces of the file]([https://en.wikipedia.org/wiki/Block_(data_storage)](https://en.wikipedia.org/wiki/Block_(data_storage)) "Block (data storage)") that have been changed, whenever possible.  
 - When a file or folder is deleted, users can recover it within 30 days.  
 - Dropbox accounts that are not accessed or emails not replied in a year are automatically deleted.  
-- Dropbox uses `SSL` transfers for synchronization and stores the data via `Advanced Encryption Standard(AES)-256` encryption.## System Design dropbox
+- Dropbox uses `SSL` transfers for synchronization and stores the data via `Advanced Encryption Standard(AES)-256` encryption.
+## System Design dropbox
+
 ### Core / Functional  Features  
 -   User should be able to upload/download, update and delete the files  
 -   File versioning (History of updates)  
 -   File and folder sync
 ### Non functional features
 - Scalability
-- 
+- Security
+- Ava
 ### Traffic  
 -   12+ million unique users  
 -   100 million request per day with lots of reads and write.
@@ -1122,7 +1125,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI1MTIyNjA4OSwxNTQ3NDY1MjU4LDIzOD
+eyJoaXN0b3J5IjpbMTIxODU5NDQ2OCwxNTQ3NDY1MjU4LDIzOD
 A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
 MDRdfQ==
 -->
