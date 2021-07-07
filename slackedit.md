@@ -63,7 +63,19 @@ Request:
 POST /api/v1/chunks/<chunk_id>
 ```
 
+Response:
 
+```
+200 OK 
+```
+
+On successful upload, the server will return HTTP response code  `200`. Below are some possible failure response codes:
+
+```
+401 Unauthorized
+400 Bad request
+500 Internal server eror
+```
 ### Client Components
 
 -   **Watcher**  
@@ -1149,7 +1161,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTE4NzQ4NywtNDA0MjAxNTYwLDE1ND
-c0NjUyNTgsMjM4MDkzMjk1LDE4MjgwMTAwMjAsLTEzNDYxMjU4
-OSwtMTU5MDkzMTMwNF19
+eyJoaXN0b3J5IjpbMjA4MzI1MzM5LC00MDQyMDE1NjAsMTU0Nz
+Q2NTI1OCwyMzgwOTMyOTUsMTgyODAxMDAyMCwtMTM0NjEyNTg5
+LC0xNTkwOTMxMzA0XX0=
 -->
