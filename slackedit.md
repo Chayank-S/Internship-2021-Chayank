@@ -86,15 +86,14 @@ There will be two types of messaging queues in the service.
 
 #### 3. Synchronization Service
 
-The client communicates with the synchronization services either to receive the latest update from the cloud storage or to send the latest request/updates to the Cloud Storage.
+The client communicates with the synchronization services either to receive the latest update from the cloud storage or to send the latest request/updates to the Cloud Storage to cl.
 
 The synchronization service receives the request from the request queue of the messaging services and updates the metadata database with the latest changes. Also, the synchronization service broadcast the latest update to the other clients (if there are multiple clients) through the response queue so that the other client’s indexer can fetch back the chunks from the cloud storage and recreate the files with the latest update. It also updates the local database with the information stored in the Metadata Database. If a client is not connected with the internet or offline for some time, it polls the system for new updates as soon as it goes online.
 
 #### 4. Cloud Storage
 
-You can use any cloud storage services like Amazon S3 to store the chunks of the files uploaded by the user. The client communicates with the cloud storage for any action performed in the files/folders using the API provided by the cloud provider.
+- The client communicates with the cloud storage for any action performed in the files/folders using the API provided by the cloud provider.
 
-A lot of candidates get afraid of this round more than the coding round because they don’t get the idea that what topics and tradeoffs they should cover within this limited timeframe. Firstly, remember that the system design round is extremely open-ended and there’s no such thing as a standard answer. Even for the sa
 
 
 
@@ -1114,7 +1113,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4MzU1NDgwOCwxNTQ3NDY1MjU4LDIzOD
-A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
-MDRdfQ==
+eyJoaXN0b3J5IjpbMzYyNTcxMjIyLDE1NDc0NjUyNTgsMjM4MD
+kzMjk1LDE4MjgwMTAwMjAsLTEzNDYxMjU4OSwtMTU5MDkzMTMw
+NF19
 -->
