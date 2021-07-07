@@ -39,7 +39,19 @@ We can download the metadata file from the cloud whenever we want and we can rec
 - The client is actively monitoring the folders for all the updates or changes happening in the files  
 -   To handle file metadata updates (e.g. file name, size, modification date, etc.) this client interacts with the Messaging services and Synchronization Service.  
 -   It also interacts with the remote cloud storage to store the actual files and to provide folder synchronization.
+### APIs
 
+The service will expose API for uploading file and downloading file. Other API like user sign-up, sign-in, sign-out, subscribing, unsubscribing etc. have already been discussed in  [this](https://systemdesignprimer.com/netflix-system-design/#apis)  article.
+
+#### Download Chunk
+
+This API would be used to download the chunk of a file.
+
+Request:
+
+```
+	GET /api/v1/chunks/<chunk_id>
+```
 
 ### Client Components
 
@@ -1126,7 +1138,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwNDIwMTU2MCwxNTQ3NDY1MjU4LDIzOD
-A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
-MDRdfQ==
+eyJoaXN0b3J5IjpbODI0NTgyMjk4LC00MDQyMDE1NjAsMTU0Nz
+Q2NTI1OCwyMzgwOTMyOTUsMTgyODAxMDAyMCwtMTM0NjEyNTg5
+LC0xNTkwOTMxMzA0XX0=
 -->
