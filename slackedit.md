@@ -48,8 +48,10 @@ We can download the metadata file from the cloud whenever we want and we can rec
 		-	only saves that specific part/chunks to the cloud storage. 
 -   **Indexer**   
 	- responsible for updating the internal database when it receives the notification from the watcher  
-	- receives the URL of the chunks from the chunker along with the hash and updates the file with modified chunks. Indexer communicates with the Synchronization Service using the Message Queuing Service, once the chunks are successfully submitted to the cloud Storage.
--   **Internal database**  store all the files and chunks information, their versions, and their location in the file system.
+	- receives the URL of the chunks from the chunker along with the hash and updates the file with modified chunks. 
+	- Indexer communicates with the Synchronization Service using the Message Queuing Service.
+-   **Internal database**  
+	- store all the files and chunks information, their versions, and their location in the file system.
 
 ### Discuss The Other Components
 
@@ -1112,7 +1114,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5ODU3NzAzMiwxNTQ3NDY1MjU4LDIzOD
+eyJoaXN0b3J5IjpbMTY4MzU1NDgwOCwxNTQ3NDY1MjU4LDIzOD
 A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
 MDRdfQ==
 -->
