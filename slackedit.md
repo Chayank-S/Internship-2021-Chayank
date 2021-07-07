@@ -18,7 +18,10 @@
 -   **Latency or Concurrency Utilization:**  You can't do time optimization as well. It will consume more time to upload a single file as a whole even if you make small changes in your file. It's also not possible to make use of concurrency to upload/download the files using multi threads or multi processes.
 ### Solution   
 - **Break the files into multiple chunks:** There is no need to upload/download the whole single file after making any changes in the file. You just need to save the chunk which is updated (this will take less memory and time). It will be easier to keep the different versions of the files into various chunks.  
-- **Create one more file named as a metadata file:** Incase of multiple files with chunks, This file contains the indexes of the chunks (chunk names and order information). You need to mention the hash of the chunks in this metadata file and you need to sync this file into the cloud.![System-Design-Dropbox-High-Level-Solution](   https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619214958/System-Design-Dropbox-High-Level-Solution.png](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619214958/System-Design-Dropbox-High-Level-Solution.png))We can download the metadata file from the cloud whenever we want and we can recreate the file using various chunks.### Components for the Dropbox system design  
+- **Create one more file named as a metadata file:** Incase of multiple files with chunks, This file contains the indexes of the chunks (chunk names and order information). You need to mention the hash of the chunks in this metadata file and you need to sync this file into the cloud.
+
+- ![](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619214958/System-Design-Dropbox-High-Level-Solution.png)
+- We can download the metadata file from the cloud whenever we want and we can recreate the file using various chunks.### Components for the Dropbox system design  
 ![Complete-System-Design-Solution-of-Dropbox-Service]([https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619215231/Complete-System-Design-Solution-of-Dropbox-Service.png](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200619215231/Complete-System-Design-Solution-of-Dropbox-Service.png))- Client installed on a computer.  
 - 4 basic components of Client : **`Watcher`,`Chunker`, `Indexer`, and `Internal DB`**  
 - Can consists of multiple clients belongs to the same user.  
@@ -1097,7 +1100,7 @@ For example, if you have a cluster of 2 nodes:
     - node2:9200
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNDQ0OTEwNCwxNTQ3NDY1MjU4LDIzOD
-A5MzI5NSwxODI4MDEwMDIwLC0xMzQ2MTI1ODksLTE1OTA5MzEz
-MDRdfQ==
+eyJoaXN0b3J5IjpbLTE1MDc2Nzk2MDEsMTU0NzQ2NTI1OCwyMz
+gwOTMyOTUsMTgyODAxMDAyMCwtMTM0NjEyNTg5LC0xNTkwOTMx
+MzA0XX0=
 -->
